@@ -60,12 +60,14 @@ class CurrentWinnersViewController: UIViewController {
 // MARK: - Networking
 extension CurrentWinnersViewController {
     private func fetchCurrentWinners() {
-        ErgastAPI.shared.fetch(from: [Endpoint.currentWinners], ofType: ErgastAPIResponse.self) { response in
+        showProgressHUD(withStatus: "Loading")
+        ErgastAPI.shared.fetch(from: Endpoint.makeURL(for: "current", and: "1"), ofType: ErgastAPIResponse.self) { response in
             guard let races = response.first?.ergastApiData.raceTable.races else { return }
             
             var winners: [Driver] = []
             races.forEach { winners.append(contentsOf: $0.results.map { $0.driver }) }
             self.winners = winners
         }
+        dismissProgressHUD()
     }
 }

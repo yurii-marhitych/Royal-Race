@@ -10,11 +10,16 @@ import UIKit
 // MARK: - UISearchBarDelegate
 extension CurrentWinnersViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            filteredWinners = winners
+            return
+        }
+        
         filterCurrentWinnersListFor(searchText)
     }
     
     func filterCurrentWinnersListFor(_ winnerName: String) {
-        filteredWinners = winners.filter { $0.title.item2!.lowercased().contains(winnerName.lowercased()) }
+        filteredWinners = winners.filter { $0.title.item1!.lowercased().contains(winnerName.lowercased()) }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

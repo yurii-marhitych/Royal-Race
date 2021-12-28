@@ -2,32 +2,32 @@ PODS:
   - Alamofire (5.5.0)
   - BATabBarController (2.0.2):
     - SnapKit
-  - DropDown (2.3.13)
   - IHProgressHUD (0.1.4)
+  - iOSDropDown (0.3.4)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
   - BATabBarController (~> 2.0.0)
-  - DropDown
   - IHProgressHUD
+  - iOSDropDown
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - BATabBarController
-    - DropDown
     - IHProgressHUD
+    - iOSDropDown
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   BATabBarController: 7f50519b3743b4e779c71a8e147ac9e8c50e0c7d
-  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: b483079912c1116ac2c529d330e56119b62d6599
+PODFILE CHECKSUM: c8f4cda13a59297f5390c4c8d9e3400c25ad5fbb
 
 COCOAPODS: 1.11.2

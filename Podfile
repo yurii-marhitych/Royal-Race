@@ -10,5 +10,5 @@ target 'RoyalRace' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.5'
   pod 'IHProgressHUD'
-  pod 'DropDown'
+  pod 'iOSDropDown'
 end

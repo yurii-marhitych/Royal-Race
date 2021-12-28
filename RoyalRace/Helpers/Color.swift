@@ -8,6 +8,6 @@
 import UIKit
 
 enum Color {
-    static let background = UIColor(named: "defaultBackground")
+    static let background = UIColor(named: "defaultBackground")!
     static let tint = UIColor.systemPink
 }

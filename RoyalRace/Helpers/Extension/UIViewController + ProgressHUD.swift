@@ -21,7 +21,9 @@ extension UIViewController {
     }
     
     func dismissProgressHUD() {
-        IHProgressHUD.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            IHProgressHUD.dismiss()
+        }
         MainTabBarController.shared.view.isUserInteractionEnabled = true
     }
 }
