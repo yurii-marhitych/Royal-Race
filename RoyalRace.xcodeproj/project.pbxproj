@@ -7,23 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3723B8277ADD3100A3ABA0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */; };
+		7C3723BA277ADDA800A3ABA0 /* ErgastAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */; };
+		7C3723BC277ADE7300A3ABA0 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723BB277ADE7300A3ABA0 /* Driver.swift */; };
+		7C3723C0277ADF7A00A3ABA0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723BF277ADF7A00A3ABA0 /* Result.swift */; };
+		7C3723C2277AE0C400A3ABA0 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723C1277AE0C400A3ABA0 /* Race.swift */; };
+		7C66EDD12779FACC00B2CC59 /* DriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDD02779FACC00B2CC59 /* DriverTableViewCell.swift */; };
+		7C66EDD32779FB4400B2CC59 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDD22779FB4400B2CC59 /* Displayable.swift */; };
+		7C66EDD7277A03B000B2CC59 /* UILabel + Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDD6277A03B000B2CC59 /* UILabel + Init.swift */; };
+		7C66EDD9277A0E7800B2CC59 /* DriverTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDD8277A0E7800B2CC59 /* DriverTableView.swift */; };
+		7C66EDDB277A115100B2CC59 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDDA277A115100B2CC59 /* Color.swift */; };
+		7C66EDDD277A15A400B2CC59 /* + UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDDC277A15A400B2CC59 /* + UITableViewDelegate.swift */; };
+		7C66EDDF277A3A9500B2CC59 /* VC + UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDDE277A3A9500B2CC59 /* VC + UITableViewDelegate.swift */; };
+		7C66EDE1277A3FB700B2CC59 /* + UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDE0277A3FB700B2CC59 /* + UITableViewDataSource.swift */; };
+		7C66EDE3277A41FE00B2CC59 /* Details + UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDE2277A41FE00B2CC59 /* Details + UITableViewDelegate.swift */; };
+		7C66EDE5277A5AF800B2CC59 /* WKWebView + Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDE4277A5AF800B2CC59 /* WKWebView + Load.swift */; };
+		7C66EDE7277A5B9100B2CC59 /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDE6277A5B9100B2CC59 /* DetailWebViewController.swift */; };
+		7C92C7B62778CB98005BA662 /* UIViewController + ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B52778CB98005BA662 /* UIViewController + ProgressHUD.swift */; };
+		7C92C7B82778E06C005BA662 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B72778E06C005BA662 /* DataProvider.swift */; };
+		7C92C7BA2778EE06005BA662 /* + UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B92778EE06005BA662 /* + UISearchBarDelegate.swift */; };
+		7C92C7BD277905B1005BA662 /* RaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7BC277905B1005BA662 /* RaceDetailsViewController.swift */; };
 		7CF23C9B277777D70017B3A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23C9A277777D70017B3A7 /* AppDelegate.swift */; };
 		7CF23C9D277777D70017B3A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23C9C277777D70017B3A7 /* SceneDelegate.swift */; };
-		7CF23C9F277777D70017B3A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23C9E277777D70017B3A7 /* ViewController.swift */; };
-		7CF23CA2277777D70017B3A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF23CA0277777D70017B3A7 /* Main.storyboard */; };
-		7CF23CA4277777DA0017B3A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF23CA3277777DA0017B3A7 /* Assets.xcassets */; };
 		7CF23CA7277777DA0017B3A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF23CA5277777DA0017B3A7 /* LaunchScreen.storyboard */; };
+		7CF23CAF277784350017B3A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF23CAE277784350017B3A7 /* Assets.xcassets */; };
+		7CF23CB5277793F40017B3A7 /* CurrentWinnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23CB4277793F40017B3A7 /* CurrentWinnersViewController.swift */; };
+		7CF23CB8277797380017B3A7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23CB7277797380017B3A7 /* MainTabBarController.swift */; };
+		7CF23CBB2777B7F50017B3A7 /* PreviousWinnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23CBA2777B7F50017B3A7 /* PreviousWinnersViewController.swift */; };
+		FD8E677369B20A83B3B02ACD /* Pods_RoyalRace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED006ADA3C0CEB63A1002EB8 /* Pods_RoyalRace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErgastAPIResponse.swift; sourceTree = "<group>"; };
+		7C3723BB277ADE7300A3ABA0 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		7C3723BF277ADF7A00A3ABA0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7C3723C1277AE0C400A3ABA0 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		7C66EDD02779FACC00B2CC59 /* DriverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewCell.swift; sourceTree = "<group>"; };
+		7C66EDD22779FB4400B2CC59 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
+		7C66EDD6277A03B000B2CC59 /* UILabel + Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Init.swift"; sourceTree = "<group>"; };
+		7C66EDD8277A0E7800B2CC59 /* DriverTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableView.swift; sourceTree = "<group>"; };
+		7C66EDDA277A115100B2CC59 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		7C66EDDC277A15A400B2CC59 /* + UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		7C66EDDE277A3A9500B2CC59 /* VC + UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC + UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		7C66EDE0277A3FB700B2CC59 /* + UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		7C66EDE2277A41FE00B2CC59 /* Details + UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Details + UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		7C66EDE4277A5AF800B2CC59 /* WKWebView + Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView + Load.swift"; sourceTree = "<group>"; };
+		7C66EDE6277A5B9100B2CC59 /* DetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
+		7C92C7B52778CB98005BA662 /* UIViewController + ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ProgressHUD.swift"; sourceTree = "<group>"; };
+		7C92C7B72778E06C005BA662 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		7C92C7B92778EE06005BA662 /* + UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		7C92C7BC277905B1005BA662 /* RaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsViewController.swift; sourceTree = "<group>"; };
 		7CF23C97277777D70017B3A7 /* RoyalRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoyalRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF23C9A277777D70017B3A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF23C9C277777D70017B3A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CF23C9E277777D70017B3A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7CF23CA1277777D70017B3A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7CF23CA3277777DA0017B3A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CF23CA6277777DA0017B3A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CF23CA8277777DA0017B3A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CF23CAE277784350017B3A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CF23CB4277793F40017B3A7 /* CurrentWinnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWinnersViewController.swift; sourceTree = "<group>"; };
+		7CF23CB7277797380017B3A7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7CF23CBA2777B7F50017B3A7 /* PreviousWinnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousWinnersViewController.swift; sourceTree = "<group>"; };
+		982F560BC9C834CA6A368972 /* Pods-RoyalRace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoyalRace.debug.xcconfig"; path = "Target Support Files/Pods-RoyalRace/Pods-RoyalRace.debug.xcconfig"; sourceTree = "<group>"; };
+		D1AF4F8728838CC7431B8F8A /* Pods-RoyalRace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoyalRace.release.xcconfig"; path = "Target Support Files/Pods-RoyalRace/Pods-RoyalRace.release.xcconfig"; sourceTree = "<group>"; };
+		ED006ADA3C0CEB63A1002EB8 /* Pods_RoyalRace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoyalRace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +77,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8E677369B20A83B3B02ACD /* Pods_RoyalRace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3220DD4601CF77B6B4505012 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				982F560BC9C834CA6A368972 /* Pods-RoyalRace.debug.xcconfig */,
+				D1AF4F8728838CC7431B8F8A /* Pods-RoyalRace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7C92C7B42778CB62005BA662 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7C92C7B52778CB98005BA662 /* UIViewController + ProgressHUD.swift */,
+				7C66EDD6277A03B000B2CC59 /* UILabel + Init.swift */,
+				7C66EDE4277A5AF800B2CC59 /* WKWebView + Load.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7C92C7BB27790581005BA662 /* RaceDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C92C7BC277905B1005BA662 /* RaceDetailsViewController.swift */,
+				7C66EDE0277A3FB700B2CC59 /* + UITableViewDataSource.swift */,
+				7C66EDE2277A41FE00B2CC59 /* Details + UITableViewDelegate.swift */,
+			);
+			path = RaceDetailsViewController;
+			sourceTree = "<group>";
+		};
 		7CF23C8E277777D70017B3A7 = {
 			isa = PBXGroup;
 			children = (
 				7CF23C99277777D70017B3A7 /* RoyalRace */,
 				7CF23C98277777D70017B3A7 /* Products */,
+				3220DD4601CF77B6B4505012 /* Pods */,
+				9AB30C7AA07F69D45752CBEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +134,96 @@
 		7CF23C99277777D70017B3A7 /* RoyalRace */ = {
 			isa = PBXGroup;
 			children = (
+				7CF23CE62777F1830017B3A7 /* Helpers */,
+				7CF23CB22777919B0017B3A7 /* Model */,
+				7CF23CB1277791900017B3A7 /* View */,
+				7CF23CB02777918B0017B3A7 /* Controller */,
 				7CF23C9A277777D70017B3A7 /* AppDelegate.swift */,
 				7CF23C9C277777D70017B3A7 /* SceneDelegate.swift */,
-				7CF23C9E277777D70017B3A7 /* ViewController.swift */,
-				7CF23CA0277777D70017B3A7 /* Main.storyboard */,
-				7CF23CA3277777DA0017B3A7 /* Assets.xcassets */,
+				7CF23CAE277784350017B3A7 /* Assets.xcassets */,
 				7CF23CA5277777DA0017B3A7 /* LaunchScreen.storyboard */,
 				7CF23CA8277777DA0017B3A7 /* Info.plist */,
 			);
 			path = RoyalRace;
+			sourceTree = "<group>";
+		};
+		7CF23CB02777918B0017B3A7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C92C7BB27790581005BA662 /* RaceDetailsViewController */,
+				7CF23CB62777972A0017B3A7 /* MainTabBarController */,
+				7CF23CB3277793B50017B3A7 /* CurrentWinnersViewController */,
+				7CF23CB92777B7CB0017B3A7 /* PreviousWinnersViewController */,
+				7C66EDE6277A5B9100B2CC59 /* DetailWebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7CF23CB1277791900017B3A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C66EDD02779FACC00B2CC59 /* DriverTableViewCell.swift */,
+				7C66EDD8277A0E7800B2CC59 /* DriverTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CF23CB22777919B0017B3A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */,
+				7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */,
+				7C3723BB277ADE7300A3ABA0 /* Driver.swift */,
+				7C3723BF277ADF7A00A3ABA0 /* Result.swift */,
+				7C3723C1277AE0C400A3ABA0 /* Race.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CF23CB3277793B50017B3A7 /* CurrentWinnersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CF23CB4277793F40017B3A7 /* CurrentWinnersViewController.swift */,
+				7C92C7B92778EE06005BA662 /* + UISearchBarDelegate.swift */,
+				7C66EDDC277A15A400B2CC59 /* + UITableViewDelegate.swift */,
+			);
+			path = CurrentWinnersViewController;
+			sourceTree = "<group>";
+		};
+		7CF23CB62777972A0017B3A7 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				7CF23CB7277797380017B3A7 /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		7CF23CB92777B7CB0017B3A7 /* PreviousWinnersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CF23CBA2777B7F50017B3A7 /* PreviousWinnersViewController.swift */,
+				7C66EDDE277A3A9500B2CC59 /* VC + UITableViewDelegate.swift */,
+			);
+			path = PreviousWinnersViewController;
+			sourceTree = "<group>";
+		};
+		7CF23CE62777F1830017B3A7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7C66EDDA277A115100B2CC59 /* Color.swift */,
+				7C92C7B72778E06C005BA662 /* DataProvider.swift */,
+				7C66EDD22779FB4400B2CC59 /* Displayable.swift */,
+				7C92C7B42778CB62005BA662 /* Extension */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9AB30C7AA07F69D45752CBEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED006ADA3C0CEB63A1002EB8 /* Pods_RoyalRace.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CF23CAB277777DA0017B3A7 /* Build configuration list for PBXNativeTarget "RoyalRace" */;
 			buildPhases = (
+				188929D65E8242648B2606E9 /* [CP] Check Pods Manifest.lock */,
 				7CF23C93277777D70017B3A7 /* Sources */,
 				7CF23C94277777D70017B3A7 /* Frameworks */,
 				7CF23C95277777D70017B3A7 /* Resources */,
+				1044DFFE1168EE9D40FE3D2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,35 +287,90 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF23CA7277777DA0017B3A7 /* LaunchScreen.storyboard in Resources */,
-				7CF23CA4277777DA0017B3A7 /* Assets.xcassets in Resources */,
-				7CF23CA2277777D70017B3A7 /* Main.storyboard in Resources */,
+				7CF23CAF277784350017B3A7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1044DFFE1168EE9D40FE3D2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoyalRace/Pods-RoyalRace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RoyalRace/Pods-RoyalRace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RoyalRace/Pods-RoyalRace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		188929D65E8242648B2606E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoyalRace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7CF23C93277777D70017B3A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF23C9F277777D70017B3A7 /* ViewController.swift in Sources */,
+				7CF23CB5277793F40017B3A7 /* CurrentWinnersViewController.swift in Sources */,
+				7C92C7B82778E06C005BA662 /* DataProvider.swift in Sources */,
 				7CF23C9B277777D70017B3A7 /* AppDelegate.swift in Sources */,
+				7C92C7B62778CB98005BA662 /* UIViewController + ProgressHUD.swift in Sources */,
+				7C66EDE7277A5B9100B2CC59 /* DetailWebViewController.swift in Sources */,
+				7CF23CB8277797380017B3A7 /* MainTabBarController.swift in Sources */,
+				7C3723C0277ADF7A00A3ABA0 /* Result.swift in Sources */,
+				7C66EDE3277A41FE00B2CC59 /* Details + UITableViewDelegate.swift in Sources */,
+				7C3723B8277ADD3100A3ABA0 /* Endpoint.swift in Sources */,
+				7C66EDD12779FACC00B2CC59 /* DriverTableViewCell.swift in Sources */,
+				7C92C7BD277905B1005BA662 /* RaceDetailsViewController.swift in Sources */,
+				7CF23CBB2777B7F50017B3A7 /* PreviousWinnersViewController.swift in Sources */,
+				7C66EDDD277A15A400B2CC59 /* + UITableViewDelegate.swift in Sources */,
+				7C66EDE5277A5AF800B2CC59 /* WKWebView + Load.swift in Sources */,
+				7C3723BC277ADE7300A3ABA0 /* Driver.swift in Sources */,
+				7C66EDD7277A03B000B2CC59 /* UILabel + Init.swift in Sources */,
+				7C66EDD9277A0E7800B2CC59 /* DriverTableView.swift in Sources */,
 				7CF23C9D277777D70017B3A7 /* SceneDelegate.swift in Sources */,
+				7C3723C2277AE0C400A3ABA0 /* Race.swift in Sources */,
+				7C66EDD32779FB4400B2CC59 /* Displayable.swift in Sources */,
+				7C66EDDF277A3A9500B2CC59 /* VC + UITableViewDelegate.swift in Sources */,
+				7C92C7BA2778EE06005BA662 /* + UISearchBarDelegate.swift in Sources */,
+				7C3723BA277ADDA800A3ABA0 /* ErgastAPIResponse.swift in Sources */,
+				7C66EDE1277A3FB700B2CC59 /* + UITableViewDataSource.swift in Sources */,
+				7C66EDDB277A115100B2CC59 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7CF23CA0277777D70017B3A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CF23CA1277777D70017B3A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7CF23CA5277777DA0017B3A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,6 +500,7 @@
 		};
 		7CF23CAC277777DA0017B3A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982F560BC9C834CA6A368972 /* Pods-RoyalRace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +509,10 @@
 				DEVELOPMENT_TEAM = 5CXDUTDMU2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoyalRace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Royal Race";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,6 +530,7 @@
 		};
 		7CF23CAD277777DA0017B3A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AF4F8728838CC7431B8F8A /* Pods-RoyalRace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +539,10 @@
 				DEVELOPMENT_TEAM = 5CXDUTDMU2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoyalRace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Royal Race";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
