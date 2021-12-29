@@ -13,16 +13,16 @@ extension CurrentWinnersViewController: UISearchBarDelegate {
         if !searchText.isEmpty {
             filterCurrentWinnersListFor(searchText)
         } else {
-            filteredWinners = winners
+            filteredWinners = drivers
         }
     }
     
     func filterCurrentWinnersListFor(_ winnerName: String) {
-        filteredWinners = winners.filter { $0.title.item1!.lowercased().contains(winnerName.lowercased()) }
+        filteredWinners = drivers.filter { $0.title.item1!.lowercased().contains(winnerName.lowercased()) }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        filteredWinners = winners
+        filteredWinners = drivers
         searchBar.resignFirstResponder()
     }
     

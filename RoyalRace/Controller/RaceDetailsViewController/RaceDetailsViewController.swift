@@ -8,11 +8,32 @@
 import UIKit
 
 class RaceDetailsViewController: UIViewController {
-    var race: Race?
-    
-    var drivers: [Driver] = [] {
+    var currentRace: Race?
+ 
+    var races: [Race] = [] {
         didSet {
-            resultTableView.items = drivers
+            
+            var drivers: [Driver] = []
+            races
+                .forEach { race in
+                    race.results.forEach { result in
+                        let driver = result.driver
+                        driver.time = result.fastestLap?.time.value ?? "(No time)"
+                        driver.position = Int(result.position)
+                        drivers.append(driver)
+                    }
+                }
+            drivers.forEach {
+                $0.race = currentRace
+            }
+            
+            self.drivers = drivers
+        }
+    }
+    
+    private var drivers: [Driver] = [] {
+        didSet {
+            resultTableView.items = drivers.sorted { $0.position ?? 0 < $1.position ?? 0 }
         }
     }
     
@@ -29,9 +50,7 @@ class RaceDetailsViewController: UIViewController {
         setupTableView()
         setupBackButton()
         
-        if let race = race {
-            drivers = race.results.map { $0.driver }
-        }
+        resultTableView.backgroundColor = .red
     }
     
     // MARK: - Configure UI Methods
@@ -55,8 +74,9 @@ class RaceDetailsViewController: UIViewController {
     private func setupTableView() {
         self.view.addSubview(resultTableView)
         resultTableView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.top.equalTo(staticTableView.snp.bottom).offset(16)
+            make.bottom.equalToSuperview().offset(-80)
         }
         
         DriverTableViewCell.register(for: resultTableView)

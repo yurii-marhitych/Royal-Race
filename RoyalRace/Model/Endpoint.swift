@@ -8,17 +8,24 @@
 import Foundation
 
 struct Endpoint {
-    private static let base =  "http://ergast.com/api/f1"
+    private static let base =  "http://ergast.com/api/f1/"
     
-    static func makeURL(for season: Season, and place: Int) -> String {
-        let seasonStr: String
+    static func makeURL(for season: Season, and position: Position) -> String {
+        var url = base
         switch season {
         case .current:
-            seasonStr = "current"
-        case let .year(year):
-            seasonStr = "\(year)"
+            url += "current/"
+        case let .some(year):
+            url += "\(year)/"
         }
         
-        return String(format: "%@/%@/results/%d.json", base, seasonStr, place)
+        switch position {
+        case .all:
+            url += "results.json"
+        case let .some(position):
+            url += "results/\(position).json"
+        }
+        
+        return url
     }
 }

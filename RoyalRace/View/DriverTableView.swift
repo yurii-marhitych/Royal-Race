@@ -14,7 +14,6 @@ class DriverTableView<Item: Hashable & Displayable>: UITableView {
     
     var items: [Item] = [] {
         didSet {
-            print(items.count)
             updateSnapshot()
         }
     }

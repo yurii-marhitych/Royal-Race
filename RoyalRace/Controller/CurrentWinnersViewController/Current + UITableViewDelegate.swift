@@ -15,11 +15,18 @@ extension CurrentWinnersViewController: UITableViewDelegate {
         
         guard
             let tableView = tableView as? DriverTableView<Driver>,
-            let selectedDriver = tableView.tableDataSource?.itemIdentifier(for: indexPath)
+            let selectedDriver = tableView.tableDataSource?.itemIdentifier(for: indexPath),
+            let selectedRace = selectedDriver.race
         else { return }
         
         let raceDetailsViewController = RaceDetailsViewController()
-        raceDetailsViewController.race = selectedDriver.race
+        raceDetailsViewController.currentRace = selectedRace
+        
+        ErgastAPI.shared.fetchRaces(for: .current, and: .all) { races in
+            let filteredRaces = races.filter { $0.raceName == selectedRace.raceName }
+            raceDetailsViewController.races = filteredRaces
+        }
+        
         navigationController?.pushViewController(raceDetailsViewController, animated: true)
     }
     
@@ -31,7 +38,7 @@ extension CurrentWinnersViewController: UITableViewDelegate {
         cell.layer.transform = rotationTransform
         cell.alpha = 0.6
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             cell.alpha = 1
             cell.layer.transform = CATransform3DIdentity
         }

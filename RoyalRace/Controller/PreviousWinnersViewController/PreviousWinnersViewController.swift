@@ -13,35 +13,32 @@ class PreviousWinnersViewController: UIViewController {
     // table view
     private let tableView = DriverTableView<Driver>()
     
-    private var races: [Race] = []
-    private(set) var winners: [Driver] = [] {
+    private(set) var drivers: [Driver] = [] {
         didSet {
-            tableView.items = winners
+            tableView.items = drivers
         }
     }
     
-    private var selectedSeason: String?
-    private var selectedPlace: String?
+    var selectedSeason: Int?
+    var selectedPosition: Int?
     
     private var seasons = (1950...2021).reversed().map { String($0) }
-    private var places = (1...20).map { String($0) }
+    private var positions = (1...20).map { String($0) }
     
     // completion handler for fetch function
     private lazy var completion: ([Race]) -> Void = { races in
-        self.races = races
-        
         var winners: [Driver] = []
         races.forEach { race in
             let drivers = race.results.map { $0.driver }
             drivers.forEach { $0.race = race }
             winners.append(contentsOf: drivers)
         }
-        self.winners = winners
+        self.drivers = winners
     }
     
     // MARK: - UI Elements
     private let seasonPicker = UIBarPickerView(width: 50, height: 20, placeholder: "season")
-    private let placePicker = UIBarPickerView(width: 50, height: 20, placeholder: "place")
+    private let positionPicker = UIBarPickerView(width: 50, height: 20, placeholder: "position")
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -63,7 +60,7 @@ class PreviousWinnersViewController: UIViewController {
         
         DriverTableViewCell.register(for: tableView)
         tableView.configureDataSource()
-        tableView.items = winners
+        tableView.items = drivers
         tableView.delegate = self
     }
     
@@ -71,23 +68,23 @@ class PreviousWinnersViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: seasonPicker)
         seasonPicker.optionArray = seasons
         seasonPicker.didSelect { season, _, _ in
-            self.selectedSeason = season
+            self.selectedSeason = Int(season)
         }
         seasonPicker.listWillDisappear {
-            self.placePicker.showList()
+            self.positionPicker.showList()
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: placePicker)
-        placePicker.optionArray = places
-        placePicker.didSelect { place, _, _ in
-            self.selectedPlace = place
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: positionPicker)
+        positionPicker.optionArray = positions
+        positionPicker.didSelect { place, _, _ in
+            self.selectedPosition = Int(place)
             
             guard
-                let season = Int(self.selectedSeason ?? ""),
-                let place = Int(self.selectedPlace ?? "")
+                let season = self.selectedSeason,
+                let position = self.selectedPosition
             else { return }
             
-            ErgastAPI.shared.fetchDrivers(for: .year(season), and: place, self.completion)
+            ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position), self.completion)
         }
     }
 }

@@ -17,7 +17,7 @@ extension RaceDetailsViewController: UITableViewDelegate {
         if let tableView = tableView as? DriverTableView<Driver>,
            let driver = tableView.tableDataSource?.itemIdentifier(for: indexPath) {
             detailWebViewController.urlToLoad = driver.wikiURL
-        } else if let race = self.race {
+        } else if let race = self.currentRace {
             detailWebViewController.urlToLoad = race.wikiURL
         } else {
             return

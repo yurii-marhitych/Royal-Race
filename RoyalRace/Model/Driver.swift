@@ -16,6 +16,8 @@ class Driver: Decodable, Hashable {
     let firstName, lastName: String
     
     var race: Race?
+    var time: String?
+    var position: Int?
     
     // Decodable
     enum CodingKeys: String, CodingKey {
@@ -41,6 +43,10 @@ extension Driver: Displayable {
     }
     
     var subtitle: (item1: String?, item2: String?) {
-        return (race?.raceName ?? "", nil)
+        guard let time = time else {
+            return (race?.raceName ?? "", nil)
+        }
+        
+        return (time, nil)
     }
 }

@@ -13,10 +13,9 @@ class CurrentWinnersViewController: UIViewController {
     // table view
     private let tableView = DriverTableView<Driver>()
     
-    private var races: [Race] = []
-    private(set) var winners: [Driver] = [] {
+    private(set) var drivers: [Driver] = [] {
         didSet {
-            tableView.items = winners
+            tableView.items = drivers
         }
     }
     var filteredWinners: [Driver] = [] {
@@ -27,15 +26,13 @@ class CurrentWinnersViewController: UIViewController {
     
     // completion handler for fetch function
     private lazy var completion: ([Race]) -> Void = { races in
-        self.races = races
-        
         var winners: [Driver] = []
         races.forEach { race in
             let drivers = race.results.map { $0.driver }
             drivers.forEach { $0.race = race }
             winners.append(contentsOf: drivers)
         }
-        self.winners = winners
+        self.drivers = winners
     }
     
     // MARK: - Life cycle
@@ -45,7 +42,7 @@ class CurrentWinnersViewController: UIViewController {
         
         setupSearchBar()
         setupTableView()
-        ErgastAPI.shared.fetchDrivers(for: .current, and: 1, completion)
+        ErgastAPI.shared.fetchRaces(for: .current, and: .some(1), completion)
     }
     
     // MARK: - Configure UI Methods
@@ -58,7 +55,7 @@ class CurrentWinnersViewController: UIViewController {
         
         DriverTableViewCell.register(for: tableView)
         tableView.configureDataSource()
-        tableView.items = winners
+        tableView.items = drivers
         tableView.delegate = self
     }
     

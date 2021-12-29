@@ -26,6 +26,7 @@
 		7C7E85C6277BA78F00A18591 /* UIBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E85C5277BA78F00A18591 /* UIBarPickerView.swift */; };
 		7C923A68277C31C700CEB4D5 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C923A67277C31C700CEB4D5 /* ProgressHUD.swift */; };
 		7C923A6A277C35FC00CEB4D5 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C923A69277C35FC00CEB4D5 /* Season.swift */; };
+		7C923A6D277C50FC00CEB4D5 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C923A6C277C50FC00CEB4D5 /* Position.swift */; };
 		7C92C7B62778CB98005BA662 /* UIViewController + setupBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B52778CB98005BA662 /* UIViewController + setupBackButton.swift */; };
 		7C92C7B82778E06C005BA662 /* ErgastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B72778E06C005BA662 /* ErgastAPI.swift */; };
 		7C92C7BA2778EE06005BA662 /* Current + UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B92778EE06005BA662 /* Current + UISearchBarDelegate.swift */; };
@@ -60,6 +61,7 @@
 		7C7E85C5277BA78F00A18591 /* UIBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarPickerView.swift; sourceTree = "<group>"; };
 		7C923A67277C31C700CEB4D5 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		7C923A69277C35FC00CEB4D5 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		7C923A6C277C50FC00CEB4D5 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		7C92C7B52778CB98005BA662 /* UIViewController + setupBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + setupBackButton.swift"; sourceTree = "<group>"; };
 		7C92C7B72778E06C005BA662 /* ErgastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErgastAPI.swift; sourceTree = "<group>"; };
 		7C92C7B92778EE06005BA662 /* Current + UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Current + UISearchBarDelegate.swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		7CF23CB1277791900017B3A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7C923A67277C31C700CEB4D5 /* ProgressHUD.swift */,
 				7C66EDD02779FACC00B2CC59 /* DriverTableViewCell.swift */,
 				7C66EDD8277A0E7800B2CC59 /* DriverTableView.swift */,
 				7C7E85C5277BA78F00A18591 /* UIBarPickerView.swift */,
@@ -186,6 +189,7 @@
 		7CF23CB22777919B0017B3A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C92C7B72778E06C005BA662 /* ErgastAPI.swift */,
 				7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */,
 				7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */,
 				7C3723BB277ADE7300A3ABA0 /* Driver.swift */,
@@ -225,12 +229,11 @@
 		7CF23CE62777F1830017B3A7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7C923A69277C35FC00CEB4D5 /* Season.swift */,
+				7C923A6C277C50FC00CEB4D5 /* Position.swift */,
 				7C66EDDA277A115100B2CC59 /* Color.swift */,
-				7C92C7B72778E06C005BA662 /* ErgastAPI.swift */,
 				7C66EDD22779FB4400B2CC59 /* Displayable.swift */,
 				7C92C7B42778CB62005BA662 /* Extension */,
-				7C923A67277C31C700CEB4D5 /* ProgressHUD.swift */,
-				7C923A69277C35FC00CEB4D5 /* Season.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				7C92C7B62778CB98005BA662 /* UIViewController + setupBackButton.swift in Sources */,
 				7C66EDE7277A5B9100B2CC59 /* DetailWebViewController.swift in Sources */,
 				7CF23CB8277797380017B3A7 /* MainTabBarController.swift in Sources */,
+				7C923A6D277C50FC00CEB4D5 /* Position.swift in Sources */,
 				7C3723C0277ADF7A00A3ABA0 /* Result.swift in Sources */,
 				7C66EDE3277A41FE00B2CC59 /* Details + UITableViewDelegate.swift in Sources */,
 				7C3723B8277ADD3100A3ABA0 /* Endpoint.swift in Sources */,

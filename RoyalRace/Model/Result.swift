@@ -13,18 +13,34 @@ struct Result: Decodable, Hashable {
     
     let number, position: String
     let driver: Driver
-    let time: ResultTime
+    let fastestLap: FastestLap?
     
     // Decodable
     enum CodingKeys: String, CodingKey {
         case number, position
         case driver = "Driver"
-        case time = "Time"
+        case fastestLap = "FastestLap"
+    }
+    
+    // MARK: - FasterLap
+    struct FastestLap: Decodable, Hashable {
+        let id = UUID()
+        let time: ResultTime
+        
+        // Decodable
+        enum CodingKeys: String, CodingKey {
+            case time =  "Time"
+        }
     }
     
     // MARK: - ResultTime
     struct ResultTime: Decodable, Hashable {
-        let id = UUID()
-        let time: String
+        let id = UUID() // Hashable
+        let value: String
+        
+        // Decodable
+        enum CodingKeys: String, CodingKey {
+            case value = "time"
+        }
     }
 }

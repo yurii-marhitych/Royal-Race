@@ -11,8 +11,8 @@ import Alamofire
 class ErgastAPI {
     static let shared = ErgastAPI()
     
-    func fetchDrivers(for season: Season, and place: Int, _ completion: @escaping ([Race]) -> Void) {
-        let url = Endpoint.makeURL(for: season, and: place)
+    func fetchRaces(for season: Season, and position: Position, _ completion: @escaping ([Race]) -> Void) {
+        let url = Endpoint.makeURL(for: season, and: position)
         
         ProgressHUD.show(withStatus: "Loading")
         fetch(from: url, ofType: ErgastAPIResponse.self) { response in

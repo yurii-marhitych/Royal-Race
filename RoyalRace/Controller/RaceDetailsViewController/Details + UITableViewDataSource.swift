@@ -18,7 +18,7 @@ extension RaceDetailsViewController: UITableViewDataSource {
             withIdentifier: DriverTableViewCell.identifier,
             for: indexPath) as! DriverTableViewCell
     
-        if let race = self.race {
+        if let race = self.currentRace {
             cell.configure(with: race)
         }
         
