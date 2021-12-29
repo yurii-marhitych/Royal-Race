@@ -11,7 +11,20 @@ import Alamofire
 class ErgastAPI {
     static let shared = ErgastAPI()
     
-    func fetch<T: Decodable>(from urls: String..., ofType: T.Type, _ completion: @escaping ([T]) -> Void) {
+    func fetchDrivers(for season: Season, and place: Int, _ completion: @escaping ([Race]) -> Void) {
+        let url = Endpoint.makeURL(for: season, and: place)
+        
+        ProgressHUD.show(withStatus: "Loading")
+        fetch(from: url, ofType: ErgastAPIResponse.self) { response in
+            guard
+                let races = response.first?.ergastApiData.raceTable.races
+            else { return }
+            completion(races)
+        }
+        ProgressHUD.dismiss()
+    }
+    
+    private func fetch<T: Decodable>(from urls: String..., ofType: T.Type, _ completion: @escaping ([T]) -> Void) {
         var values: [T] = []
         let fetchedGroup = DispatchGroup()
         urls.forEach { url in

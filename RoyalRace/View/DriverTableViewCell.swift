@@ -47,14 +47,12 @@ class DriverTableViewCell: UITableViewCell {
         }
         // titleLabel2
         contentView.addSubview(titleLabel2)
-        
-        titleLabel2.textColor = .systemGray
-        
         titleLabel2.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel1.snp.trailing).offset(8)
             make.centerY.equalTo(titleLabel1)
             make.height.equalTo(titleLabel1)
         }
+        titleLabel2.textColor = .systemGray
         
         // subtitleLabel1
         contentView.addSubview(subtitleLabel1)

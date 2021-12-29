@@ -10,11 +10,13 @@ import BATabBarController
 import iOSDropDown
 
 class PreviousWinnersViewController: UIViewController {
+    // table view
     private let tableView = DriverTableView<Driver>()
-    var winners: [Driver] = [] {
+    
+    private var races: [Race] = []
+    private(set) var winners: [Driver] = [] {
         didSet {
             tableView.items = winners
-            print("Selected")
         }
     }
     
@@ -22,7 +24,20 @@ class PreviousWinnersViewController: UIViewController {
     private var selectedPlace: String?
     
     private var seasons = (1950...2021).reversed().map { String($0) }
-    private var places = (1...30).map { String($0) }
+    private var places = (1...20).map { String($0) }
+    
+    // completion handler for fetch function
+    private lazy var completion: ([Race]) -> Void = { races in
+        self.races = races
+        
+        var winners: [Driver] = []
+        races.forEach { race in
+            let drivers = race.results.map { $0.driver }
+            drivers.forEach { $0.race = race }
+            winners.append(contentsOf: drivers)
+        }
+        self.winners = winners
+    }
     
     // MARK: - UI Elements
     private let seasonPicker = UIBarPickerView(width: 50, height: 20, placeholder: "season")
@@ -41,8 +56,10 @@ class PreviousWinnersViewController: UIViewController {
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-80)
         }
+
         
         DriverTableViewCell.register(for: tableView)
         tableView.configureDataSource()
@@ -65,26 +82,12 @@ class PreviousWinnersViewController: UIViewController {
         placePicker.didSelect { place, _, _ in
             self.selectedPlace = place
             
-            guard let season = self.selectedSeason, let place = self.selectedPlace else { return }
-            self.fetchDrivers(for: season, and: place)
-        }
-    }
-}
-
-// MARK: - Networking
-extension PreviousWinnersViewController {
-    private func fetchDrivers(for season: String, and place: String) {
-        let url = Endpoint.makeURL(for: season, and: place)
-
-        showProgressHUD(withStatus: "Loading...")
-        ErgastAPI.shared.fetch(from: url, ofType: ErgastAPIResponse.self) { response in
-            print(response)
-            guard let races = response.first?.ergastApiData.raceTable.races else { return }
+            guard
+                let season = Int(self.selectedSeason ?? ""),
+                let place = Int(self.selectedPlace ?? "")
+            else { return }
             
-            var winners: [Driver] = []
-            races.forEach { winners.append(contentsOf: $0.results.map { $0.driver }) }
-            self.winners = winners
+            ErgastAPI.shared.fetchDrivers(for: .year(season), and: place, self.completion)
         }
-        dismissProgressHUD()
     }
 }

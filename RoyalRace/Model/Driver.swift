@@ -8,13 +8,14 @@
 import Foundation
 
 // MARK: - Driver
-struct Driver: Decodable, Hashable {
-    // Hashable
-    let id = UUID()
+class Driver: Decodable, Hashable {
+    let id = UUID() // Hashable
     
     let permanentNumber: String
     let wikiURL: String
     let firstName, lastName: String
+    
+    var race: Race?
     
     // Decodable
     enum CodingKeys: String, CodingKey {
@@ -22,6 +23,14 @@ struct Driver: Decodable, Hashable {
         case wikiURL = "url"
         case firstName = "givenName"
         case lastName = "familyName"
+    }
+    
+    static func == (lhs: Driver, rhs: Driver) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(race)
     }
 }
 
@@ -32,6 +41,6 @@ extension Driver: Displayable {
     }
     
     var subtitle: (item1: String?, item2: String?) {
-        return ("Paris Gran-Prix", nil)
+        return (race?.raceName ?? "", nil)
     }
 }

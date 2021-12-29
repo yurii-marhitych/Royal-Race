@@ -10,7 +10,15 @@ import Foundation
 struct Endpoint {
     private static let base =  "http://ergast.com/api/f1"
     
-    static func makeURL(for season: String, and place: String) -> String {
-        return String(format: "%@/%@/results/%@.json", base, season, place)
+    static func makeURL(for season: Season, and place: Int) -> String {
+        let seasonStr: String
+        switch season {
+        case .current:
+            seasonStr = "current"
+        case let .year(year):
+            seasonStr = "\(year)"
+        }
+        
+        return String(format: "%@/%@/results/%d.json", base, seasonStr, place)
     }
 }

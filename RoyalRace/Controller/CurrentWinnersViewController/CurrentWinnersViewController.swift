@@ -1,5 +1,5 @@
 //
-//  CurrentWinnersViewController: UI.swift
+//  CurrentWinnersViewController.swift
 //  RoyalRace
 //
 //  Created by Юра Маргітич on 25.12.2021.
@@ -10,8 +10,11 @@ import Alamofire
 import IHProgressHUD
 
 class CurrentWinnersViewController: UIViewController {
+    // table view
     private let tableView = DriverTableView<Driver>()
-    var winners: [Driver] = [] {
+    
+    private var races: [Race] = []
+    private(set) var winners: [Driver] = [] {
         didSet {
             tableView.items = winners
         }
@@ -22,6 +25,19 @@ class CurrentWinnersViewController: UIViewController {
         }
     }
     
+    // completion handler for fetch function
+    private lazy var completion: ([Race]) -> Void = { races in
+        self.races = races
+        
+        var winners: [Driver] = []
+        races.forEach { race in
+            let drivers = race.results.map { $0.driver }
+            drivers.forEach { $0.race = race }
+            winners.append(contentsOf: drivers)
+        }
+        self.winners = winners
+    }
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,45 +45,30 @@ class CurrentWinnersViewController: UIViewController {
         
         setupSearchBar()
         setupTableView()
-        fetchCurrentWinners()
+        ErgastAPI.shared.fetchDrivers(for: .current, and: 1, completion)
     }
     
-    // MARK: - Configure Methods
+    // MARK: - Configure UI Methods
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-80)
         }
         
         DriverTableViewCell.register(for: tableView)
         tableView.configureDataSource()
         tableView.items = winners
-        
         tableView.delegate = self
     }
     
     private func setupSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.tintColor = .systemPink
+        searchController.searchBar.tintColor = Color.tint
         searchController.searchBar.placeholder = "Search for current Winners"
         searchController.searchBar.searchTextField.clearButtonMode = .never
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
-    }
-}
-
-// MARK: - Networking
-extension CurrentWinnersViewController {
-    private func fetchCurrentWinners() {
-        showProgressHUD(withStatus: "Loading")
-        ErgastAPI.shared.fetch(from: Endpoint.makeURL(for: "current", and: "1"), ofType: ErgastAPIResponse.self) { response in
-            guard let races = response.first?.ergastApiData.raceTable.races else { return }
-            
-            var winners: [Driver] = []
-            races.forEach { winners.append(contentsOf: $0.results.map { $0.driver }) }
-            self.winners = winners
-        }
-        dismissProgressHUD()
     }
 }

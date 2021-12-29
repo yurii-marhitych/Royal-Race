@@ -1,5 +1,5 @@
 //
-//  + UITableViewDelegate.swift
+//  Current + UITableViewDelegate.swift
 //  RoyalRace
 //
 //  Created by Юра Маргітич on 27.12.2021.
@@ -8,9 +8,19 @@
 import UIKit
 
 // MARK: - UITableViewDelegate
-extension PreviousWinnersViewController: UITableViewDelegate {
+extension CurrentWinnersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        navigationItem.searchController?.searchBar.resignFirstResponder()
+        
+        guard
+            let tableView = tableView as? DriverTableView<Driver>,
+            let selectedDriver = tableView.tableDataSource?.itemIdentifier(for: indexPath)
+        else { return }
+        
+        let raceDetailsViewController = RaceDetailsViewController()
+        raceDetailsViewController.race = selectedDriver.race
+        navigationController?.pushViewController(raceDetailsViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -1,5 +1,5 @@
 //
-//  + UITableViewDataSource.swift
+//  Details + UITableViewDataSource.swift
 //  RoyalRace
 //
 //  Created by Юра Маргітич on 27.12.2021.
@@ -18,8 +18,9 @@ extension RaceDetailsViewController: UITableViewDataSource {
             withIdentifier: DriverTableViewCell.identifier,
             for: indexPath) as! DriverTableViewCell
     
-        let race = Race(season: "1950", round: "10", wikiURL: "https://en.wiktionary.org/wiki/Grand_Prix", raceName: "Paris Gran-prix", date: "13-10-1950", results: [])
-        cell.configure(with: race)
+        if let race = self.race {
+            cell.configure(with: race)
+        }
         
         return cell
     }

@@ -7,23 +7,29 @@
 
 import UIKit
 import WebKit
-import SnapKit
 
 class DetailWebViewController: UIViewController {
     var urlToLoad: String?
     
+    // MARK: - UI Element
     private let webView = WKWebView()
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Wikipedia"
         
+        setupBackButton()
         setupWebView()
-        guard let url = urlToLoad else { return }
-        webView.load(url: url)
     }
     
-    // MARK: - Configure UI Methods
+    // MARK: - Configure Methods
     private func setupWebView() {
+        webView.scrollView.showsVerticalScrollIndicator = false
         view = webView
+        
+        guard let url = urlToLoad else { return }
+        webView.load(url: url)
     }
 }

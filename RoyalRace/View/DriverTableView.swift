@@ -9,7 +9,8 @@ import UIKit
 
 class DriverTableView<Item: Hashable & Displayable>: UITableView {
     var indicesOfDisplayedCells: [IndexPath] = []
-    private var tableDataSource: TableDataSource?
+    // data source
+    var tableDataSource: TableDataSource?
     
     var items: [Item] = [] {
         didSet {
@@ -21,11 +22,11 @@ class DriverTableView<Item: Hashable & Displayable>: UITableView {
     // Setup UI
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupTableViewUI()
+        setupTableView()
     }
     
     // MARK: - Configure UI Methods
-    private func setupTableViewUI() {
+    private func setupTableView() {
         backgroundColor = Color.background
         separatorColor = Color.tint.withAlphaComponent(0.8)
         showsVerticalScrollIndicator = false

@@ -13,8 +13,17 @@ extension RaceDetailsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let detailWebViewController = DetailWebViewController()
-        detailWebViewController.urlToLoad = "https://en.wikipedia.org/wiki/Michael_Schumacher"
-        navigationController?.pushViewController(detailWebViewController, animated: true)
+        
+        if let tableView = tableView as? DriverTableView<Driver>,
+           let driver = tableView.tableDataSource?.itemIdentifier(for: indexPath) {
+            detailWebViewController.urlToLoad = driver.wikiURL
+        } else if let race = self.race {
+            detailWebViewController.urlToLoad = race.wikiURL
+        } else {
+            return
+        }
+        
+        self.present(detailWebViewController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

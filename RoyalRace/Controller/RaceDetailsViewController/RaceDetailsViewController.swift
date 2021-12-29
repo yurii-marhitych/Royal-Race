@@ -8,33 +8,33 @@
 import UIKit
 
 class RaceDetailsViewController: UIViewController {
+    var race: Race?
+    
     var drivers: [Driver] = [] {
         didSet {
             resultTableView.items = drivers
         }
     }
     
-    // MARK: - Table Views
+    // table views
     private let staticTableView = UITableView()
     private let resultTableView = DriverTableView<Driver>()
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
-        view.backgroundColor = Color.background
-        setupBackBarButton()
+        
         setupStaticTableView()
         setupTableView()
+        setupBackButton()
+        
+        if let race = race {
+            drivers = race.results.map { $0.driver }
+        }
     }
     
     // MARK: - Configure UI Methods
-    private func setupBackBarButton() {
-        let backBarButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.done, target: self, action: #selector(popViewController))
-        backBarButton.image = UIImage(systemName: "chevron.left")?.withTintColor(Color.tint)
-        backBarButton.title = "Back"
-        navigationItem.leftBarButtonItem = backBarButton
-    }
-    
     private func setupStaticTableView() {
         self.view.addSubview(staticTableView)
         staticTableView.snp.makeConstraints { make in
@@ -63,10 +63,5 @@ class RaceDetailsViewController: UIViewController {
         resultTableView.configureDataSource()
         resultTableView.items = drivers
         resultTableView.delegate = self
-    }
-    
-    // MARK: - Helper Methods
-    @objc private func popViewController() {
-        navigationController?.popViewController(animated: true)
     }
 }

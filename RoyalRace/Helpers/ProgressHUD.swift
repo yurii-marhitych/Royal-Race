@@ -1,15 +1,14 @@
 //
-//  UIViewController + ProgressHUD.swift
+//  ProgressHUD.swift
 //  RoyalRace
 //
-//  Created by Юра Маргітич on 26.12.2021.
+//  Created by Юра Маргітич on 29.12.2021.
 //
 
-import UIKit
 import IHProgressHUD
 
-extension UIViewController {
-    func showProgressHUD(withStatus status: String? = nil) {
+class ProgressHUD {
+    static func show(withStatus status: String? = nil) {
         IHProgressHUD.set(backgroundColor: .black.withAlphaComponent(0.3))
         IHProgressHUD.set(foregroundColor: .white)
         IHProgressHUD.set(borderColor: .white)
@@ -20,7 +19,7 @@ extension UIViewController {
         MainTabBarController.shared.view.isUserInteractionEnabled = false
     }
     
-    func dismissProgressHUD() {
+    static func dismiss() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             IHProgressHUD.dismiss()
         }
