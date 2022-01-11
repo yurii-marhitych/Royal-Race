@@ -120,15 +120,16 @@ class PreviousWinnersViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: positionPicker)
         positionPicker.optionArray = positions
-        positionPicker.didSelect { place, _, _ in
-            self.selectedPosition = Int(place)
+        positionPicker.didSelect { [weak self] place, _, _ in
+            guard let someSelf = self else { return }
+            someSelf.selectedPosition = Int(place)
             
             guard
-                let season = self.selectedSeason,
-                let position = self.selectedPosition
+                let season = someSelf.selectedSeason,
+                let position = someSelf.selectedPosition
             else { return }
             
-            ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position), self.completion)
+            ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position), someSelf.completion)
         }
     }
 }
