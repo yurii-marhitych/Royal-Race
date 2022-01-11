@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  FetchResult.swift
 //  RoyalRace
 //
 //  Created by Юра Маргітич on 28.12.2021.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Result
-struct Result: Decodable, Hashable {
+// MARK: - FetchResult
+struct FetchResult: Decodable, Hashable {
     let id = UUID() // Hashable
     
     let number, position: String

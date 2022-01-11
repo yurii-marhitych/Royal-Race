@@ -15,7 +15,7 @@ struct Race: Decodable, Hashable {
     let wikiURL: String
     let raceName: String
     let date: String
-    let results: [Result]
+    let results: [FetchResult]
     
     // Decodable
     enum CodingKeys: String, CodingKey {

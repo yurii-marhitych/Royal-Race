@@ -22,9 +22,18 @@ extension CurrentWinnersViewController: UITableViewDelegate {
         let raceDetailsViewController = RaceDetailsViewController()
         raceDetailsViewController.currentRace = selectedRace
         
-        ErgastAPI.shared.fetchRaces(for: .current, and: .all) { races in
-            let filteredRaces = races.filter { $0.raceName == selectedRace.raceName }
-            raceDetailsViewController.races = filteredRaces
+        ErgastAPI.shared.fetchRaces(for: .current, and: .all) { result in
+            switch result {
+            case .success(let races):
+                let filteredRaces = races.filter { $0.raceName == selectedRace.raceName }
+                raceDetailsViewController.races = filteredRaces
+            case .failure(let error):
+                if error == .emptyResponse {
+                    NotificationCenter.default.post(name: .emptyCurrentResponse, object: nil)
+                } else if error == .badInternetConnection {
+                    NotificationCenter.default.post(name: .badInternetConnectionCurrent, object: nil)
+                }
+            }
         }
         
         navigationController?.pushViewController(raceDetailsViewController, animated: true)

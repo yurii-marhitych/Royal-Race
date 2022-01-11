@@ -26,14 +26,23 @@ class PreviousWinnersViewController: UIViewController {
     private var positions = (1...20).map { String($0) }
     
     // completion handler for fetch function
-    private lazy var completion: ([Race]) -> Void = { races in
-        var winners: [Driver] = []
-        races.forEach { race in
-            let drivers = race.results.map { $0.driver }
-            drivers.forEach { $0.race = race }
-            winners.append(contentsOf: drivers)
+    private lazy var completion: (Result<[Race], ErgastAPI.ErgastAPIError>) -> Void = { [weak self] result in
+        switch result {
+        case .success(let races):
+            var winners: [Driver] = []
+            races.forEach { race in
+                let drivers = race.results.map { $0.driver }
+                drivers.forEach { $0.race = race }
+                winners.append(contentsOf: drivers)
+            }
+            self?.drivers = winners
+        case .failure(let error):
+            if error == .emptyResponse {
+                NotificationCenter.default.post(name: .emptyPreviousResponse, object: nil)
+            } else if error == .badInternetConnection {
+                NotificationCenter.default.post(name: .badInternetConnectionPrevious, object: nil)
+            }
         }
-        self.drivers = winners
     }
     
     // MARK: - UI Elements
@@ -47,6 +56,41 @@ class PreviousWinnersViewController: UIViewController {
      
         setupPickers()
         setupTableView()
+        
+        // NotificationCenter Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(emptyResponse), name: .emptyPreviousResponse, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(badInternetConnection), name: .badInternetConnectionPrevious, object: nil)
+    }
+    
+    // deinit
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .emptyPreviousResponse, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .badInternetConnectionPrevious, object: nil)
+    }
+    
+    // MARK: - Observer Methods
+    @objc private func emptyResponse() {
+        let alert = UIAlertController(title: "ERROR", message: "We can not to download an information about this race/driver from data base. Try later, please!", preferredStyle: .alert)
+        alert.setTitle(color: Color.foreground)
+        alert.setBackgroundColor(color: Color.background)
+        alert.setTint(color: Color.tint)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func badInternetConnection() {
+        let alert = UIAlertController(title: "ERROR", message: "Something was wrong :( Maybe you have bad Internet connection. Try later, please!", preferredStyle: .alert)
+        alert.setTitle(color: Color.foreground)
+        alert.setBackgroundColor(color: Color.background)
+        alert.setTint(color: Color.tint)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Configure UI Methods

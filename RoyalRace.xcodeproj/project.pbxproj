@@ -10,7 +10,7 @@
 		7C3723B8277ADD3100A3ABA0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */; };
 		7C3723BA277ADDA800A3ABA0 /* ErgastAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */; };
 		7C3723BC277ADE7300A3ABA0 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723BB277ADE7300A3ABA0 /* Driver.swift */; };
-		7C3723C0277ADF7A00A3ABA0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723BF277ADF7A00A3ABA0 /* Result.swift */; };
+		7C3723C0277ADF7A00A3ABA0 /* FetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723BF277ADF7A00A3ABA0 /* FetchResult.swift */; };
 		7C3723C2277AE0C400A3ABA0 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3723C1277AE0C400A3ABA0 /* Race.swift */; };
 		7C66EDD12779FACC00B2CC59 /* DriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDD02779FACC00B2CC59 /* DriverTableViewCell.swift */; };
 		7C66EDD32779FB4400B2CC59 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C66EDD22779FB4400B2CC59 /* Displayable.swift */; };
@@ -31,6 +31,8 @@
 		7C92C7B82778E06C005BA662 /* ErgastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B72778E06C005BA662 /* ErgastAPI.swift */; };
 		7C92C7BA2778EE06005BA662 /* Current + UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7B92778EE06005BA662 /* Current + UISearchBarDelegate.swift */; };
 		7C92C7BD277905B1005BA662 /* RaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C92C7BC277905B1005BA662 /* RaceDetailsViewController.swift */; };
+		7CAE796E278D37AD00B94FC7 /* Notification.Name + errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE796D278D37AD00B94FC7 /* Notification.Name + errors.swift */; };
+		7CAE7970278D3CB300B94FC7 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE796F278D3CB300B94FC7 /* UIAlertController.swift */; };
 		7CF23C9B277777D70017B3A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23C9A277777D70017B3A7 /* AppDelegate.swift */; };
 		7CF23C9D277777D70017B3A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF23C9C277777D70017B3A7 /* SceneDelegate.swift */; };
 		7CF23CA7277777DA0017B3A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF23CA5277777DA0017B3A7 /* LaunchScreen.storyboard */; };
@@ -45,7 +47,7 @@
 		7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErgastAPIResponse.swift; sourceTree = "<group>"; };
 		7C3723BB277ADE7300A3ABA0 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
-		7C3723BF277ADF7A00A3ABA0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7C3723BF277ADF7A00A3ABA0 /* FetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResult.swift; sourceTree = "<group>"; };
 		7C3723C1277AE0C400A3ABA0 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		7C66EDD02779FACC00B2CC59 /* DriverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewCell.swift; sourceTree = "<group>"; };
 		7C66EDD22779FB4400B2CC59 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		7C92C7B72778E06C005BA662 /* ErgastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErgastAPI.swift; sourceTree = "<group>"; };
 		7C92C7B92778EE06005BA662 /* Current + UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Current + UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		7C92C7BC277905B1005BA662 /* RaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsViewController.swift; sourceTree = "<group>"; };
+		7CAE796D278D37AD00B94FC7 /* Notification.Name + errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name + errors.swift"; sourceTree = "<group>"; };
+		7CAE796F278D3CB300B94FC7 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		7CF23C97277777D70017B3A7 /* RoyalRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoyalRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF23C9A277777D70017B3A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF23C9C277777D70017B3A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				7C92C7B52778CB98005BA662 /* UIViewController + setupBackButton.swift */,
 				7C66EDD6277A03B000B2CC59 /* UILabel + Init.swift */,
 				7C66EDE4277A5AF800B2CC59 /* WKWebView + Load.swift */,
+				7CAE796D278D37AD00B94FC7 /* Notification.Name + errors.swift */,
+				7CAE796F278D3CB300B94FC7 /* UIAlertController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -193,7 +199,7 @@
 				7C3723B7277ADD3100A3ABA0 /* Endpoint.swift */,
 				7C3723B9277ADDA800A3ABA0 /* ErgastAPIResponse.swift */,
 				7C3723BB277ADE7300A3ABA0 /* Driver.swift */,
-				7C3723BF277ADF7A00A3ABA0 /* Result.swift */,
+				7C3723BF277ADF7A00A3ABA0 /* FetchResult.swift */,
 				7C3723C1277AE0C400A3ABA0 /* Race.swift */,
 			);
 			path = Model;
@@ -361,14 +367,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF23CB5277793F40017B3A7 /* CurrentWinnersViewController.swift in Sources */,
+				7CAE7970278D3CB300B94FC7 /* UIAlertController.swift in Sources */,
 				7C92C7B82778E06C005BA662 /* ErgastAPI.swift in Sources */,
 				7C7E85C6277BA78F00A18591 /* UIBarPickerView.swift in Sources */,
 				7CF23C9B277777D70017B3A7 /* AppDelegate.swift in Sources */,
 				7C92C7B62778CB98005BA662 /* UIViewController + setupBackButton.swift in Sources */,
 				7C66EDE7277A5B9100B2CC59 /* DetailWebViewController.swift in Sources */,
+				7CAE796E278D37AD00B94FC7 /* Notification.Name + errors.swift in Sources */,
 				7CF23CB8277797380017B3A7 /* MainTabBarController.swift in Sources */,
 				7C923A6D277C50FC00CEB4D5 /* Position.swift in Sources */,
-				7C3723C0277ADF7A00A3ABA0 /* Result.swift in Sources */,
+				7C3723C0277ADF7A00A3ABA0 /* FetchResult.swift in Sources */,
 				7C66EDE3277A41FE00B2CC59 /* Details + UITableViewDelegate.swift in Sources */,
 				7C3723B8277ADD3100A3ABA0 /* Endpoint.swift in Sources */,
 				7C66EDD12779FACC00B2CC59 /* DriverTableViewCell.swift in Sources */,

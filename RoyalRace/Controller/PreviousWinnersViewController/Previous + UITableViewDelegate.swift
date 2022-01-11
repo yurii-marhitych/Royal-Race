@@ -23,9 +23,14 @@ extension PreviousWinnersViewController: UITableViewDelegate {
         let raceDetailsViewController = RaceDetailsViewController()
         raceDetailsViewController.currentRace = selectedRace
         
-        ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position)) { races in
-            let filteredRaces = races.filter { $0.raceName == selectedRace.raceName }
-            raceDetailsViewController.races = filteredRaces
+        ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position)) { result in
+            switch result {
+            case .success(let races):
+                let filteredRaces = races.filter { $0.raceName == selectedRace.raceName }
+                raceDetailsViewController.races = filteredRaces
+            case .failure:
+                break
+            }
         }
         
         navigationController?.pushViewController(raceDetailsViewController, animated: true)

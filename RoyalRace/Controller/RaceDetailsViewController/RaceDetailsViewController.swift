@@ -26,7 +26,7 @@ class RaceDetailsViewController: UIViewController {
             drivers.forEach {
                 $0.race = currentRace
             }
-            
+
             self.drivers = drivers
         }
     }
