@@ -24,26 +24,6 @@ class CurrentWinnersViewController: UIViewController {
         }
     }
     
-    // completion handler for fetch function
-    private lazy var completion: (Result<[Race], ErgastAPI.ErgastAPIError>) -> Void = { [weak self] result in
-        switch result {
-        case .success(let races):
-            var winners: [Driver] = []
-            races.forEach { race in
-                let drivers = race.results.map { $0.driver }
-                drivers.forEach { $0.race = race }
-                winners.append(contentsOf: drivers)
-            }
-            self?.drivers = winners
-        case .failure(let error):
-            if error == .emptyResponse {
-                NotificationCenter.default.post(name: .emptyCurrentResponse, object: nil)
-            } else if error == .badInternetConnection {
-                NotificationCenter.default.post(name: .badInternetConnectionCurrent, object: nil)
-            }
-        }
-    }
-    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +31,24 @@ class CurrentWinnersViewController: UIViewController {
         
         setupSearchBar()
         setupTableView()
-        ErgastAPI.shared.fetchRaces(for: .current, and: .some(1), completion)
+        ErgastAPI.shared.fetchRaces(for: .current, and: .some(1)) { [weak self] result in
+            switch result {
+            case .success(let races):
+                var winners: [Driver] = []
+                races.forEach { race in
+                    let drivers = race.results.map { $0.driver }
+                    drivers.forEach { $0.race = race }
+                    winners.append(contentsOf: drivers)
+                }
+                self?.drivers = winners
+            case .failure(let error):
+                if error == .emptyResponse {
+                    NotificationCenter.default.post(name: .emptyCurrentResponse, object: nil)
+                } else if error == .badInternetConnection {
+                    NotificationCenter.default.post(name: .badInternetConnectionCurrent, object: nil)
+                }
+            }
+        }
         
         // NotificationCenter Observers
         NotificationCenter.default.addObserver(self, selector: #selector(emptyResponse), name: .emptyCurrentResponse, object: nil)

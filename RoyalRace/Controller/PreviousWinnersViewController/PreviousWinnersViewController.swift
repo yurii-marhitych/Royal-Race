@@ -25,26 +25,6 @@ class PreviousWinnersViewController: UIViewController {
     private var seasons = (1950...2021).reversed().map { String($0) }
     private var positions = (1...20).map { String($0) }
     
-    // completion handler for fetch function
-    private lazy var completion: (Result<[Race], ErgastAPI.ErgastAPIError>) -> Void = { [weak self] result in
-        switch result {
-        case .success(let races):
-            var winners: [Driver] = []
-            races.forEach { race in
-                let drivers = race.results.map { $0.driver }
-                drivers.forEach { $0.race = race }
-                winners.append(contentsOf: drivers)
-            }
-            self?.drivers = winners
-        case .failure(let error):
-            if error == .emptyResponse {
-                NotificationCenter.default.post(name: .emptyPreviousResponse, object: nil)
-            } else if error == .badInternetConnection {
-                NotificationCenter.default.post(name: .badInternetConnectionPrevious, object: nil)
-            }
-        }
-    }
-    
     // MARK: - UI Elements
     private let seasonPicker = UIBarPickerView(width: 50, height: 20, placeholder: "season")
     private let positionPicker = UIBarPickerView(width: 50, height: 20, placeholder: "position")
@@ -129,7 +109,24 @@ class PreviousWinnersViewController: UIViewController {
                 let position = someSelf.selectedPosition
             else { return }
             
-            ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position), someSelf.completion)
+            ErgastAPI.shared.fetchRaces(for: .some(season), and: .some(position)) { [weak self] result in
+                switch result {
+                case .success(let races):
+                    var winners: [Driver] = []
+                    races.forEach { race in
+                        let drivers = race.results.map { $0.driver }
+                        drivers.forEach { $0.race = race }
+                        winners.append(contentsOf: drivers)
+                    }
+                    self?.drivers = winners
+                case .failure(let error):
+                    if error == .emptyResponse {
+                        NotificationCenter.default.post(name: .emptyPreviousResponse, object: nil)
+                    } else if error == .badInternetConnection {
+                        NotificationCenter.default.post(name: .badInternetConnectionPrevious, object: nil)
+                    }
+                }
+            }
         }
     }
 }
